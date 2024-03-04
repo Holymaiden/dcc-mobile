@@ -54,3 +54,13 @@ Welcome to the DCC Mobile App GitHub Repository! This application is designed to
 
 - [ ] Upload learning resources and materials.
 - [ ] Categorize materials for easy access.
+
+## Example
+
+![App1](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App1.png)
+![App4](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App4.png)
+![App5](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App5.png)
+![App6](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App6.png)
+![App7](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App7.png)
+![App8](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App8.png)
+![App9](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App9.png)
