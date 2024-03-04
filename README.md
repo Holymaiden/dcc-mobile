@@ -57,6 +57,17 @@ Welcome to the DCC Mobile App GitHub Repository! This application is designed to
 
 ## Example
 
-![App1](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App1.png) ![App4](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App4.png) ![App5](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App5.png)
-![App6](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App6.png) ![App7](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App7.png) ![App8](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App8.png)
-![App9](https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App9.png)
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App1.png" alt="App1" width="200"/>
+    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App4.png" alt="App4" width="200"/>
+    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App5.png" alt="App5" width="200"/>
+</div>
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App6.png" alt="App6" width="200"/>
+    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App7.png" alt="App7" width="200"/>
+    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App8.png" alt="App8" width="200"/>
+</div>
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App9.png" alt="App9" width="200"/>
+</div>
