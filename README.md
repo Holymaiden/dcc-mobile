@@ -65,9 +65,5 @@ Welcome to the DCC Mobile App GitHub Repository! This application is designed to
 <div style="display: flex; justify-content: space-between;">
     <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App6.png" alt="App6" width="200"/>
     <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App7.png" alt="App7" width="200"/>
-    <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App8.png" alt="App8" width="200"/>
-</div>
-
-<div style="display: flex; justify-content: space-between;">
     <img src="https://github.com/Holymaiden/dcc-mobile/blob/1fbeb531211d55b2308f9ad7cb22896ca680b579/assets/images/git/App9.png" alt="App9" width="200"/>
 </div>
