@@ -1,17 +1,12 @@
-import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, XStack } from "tamagui";
 
 import { ActivityHeader } from "@/ui/core/header";
 import { ActivityTabs, DatesCard } from "@/ui/services";
-
-import { Container, View } from "@core";
+import { Container, SafeAreaBackground, View } from "@core";
 
 const Activity = () => {
   return (
-    <SafeAreaView
-      style={{ flex: 1, backgroundColor: "white" }}
-      edges={["right", "top", "left"]}
-    >
+    <SafeAreaBackground backgroundColor="white">
       <ScrollView showsVerticalScrollIndicator={false}>
         <ActivityHeader />
         <Container
@@ -27,7 +22,7 @@ const Activity = () => {
           </View>
         </Container>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaBackground>
   );
 };
 

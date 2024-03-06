@@ -1,8 +1,7 @@
-import { SafeAreaView } from "react-native-safe-area-context";
 import { H4, H5, ScrollView, XStack } from "tamagui";
 import { Image } from "expo-image";
 
-import { Container, HomeHeader, Text, View } from "@core";
+import { Container, HomeHeader, SafeAreaBackground, Text, View } from "@core";
 import { MemberCard, News } from "@/ui/services";
 import { NewsType } from "@/core/types";
 
@@ -38,17 +37,10 @@ const memberCard = {
 
 const Home = () => {
   return (
-    <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#006EE9" }}
-      edges={["right", "top", "left"]}
-    >
+    <SafeAreaBackground>
       <ScrollView showsVerticalScrollIndicator={false}>
         <HomeHeader user="fihaa" notifications={1} />
-        <Container
-          gap="$4"
-          borderTopLeftRadius="$10"
-          borderTopRightRadius="$10"
-        >
+        <Container gap="$4" borderRadius="$10">
           <XStack justifyContent="space-between" alignItems="center">
             <H4
               flex={2}
@@ -74,7 +66,7 @@ const Home = () => {
           </View>
         </Container>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaBackground>
   );
 };
 
