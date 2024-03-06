@@ -39,7 +39,7 @@ const memberCard = {
 const Home = () => {
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#4263EB" }}
+      style={{ flex: 1, backgroundColor: "#006EE9" }}
       edges={["right", "top", "left"]}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
