@@ -14,7 +14,11 @@ import { Text } from "../text";
 import { taskDate } from "@/core";
 import { Task, TaskCategory, TaskStatus } from "@/core/types";
 
-export const TaskCard = ({ data }: { data: Task }) => {
+type TaskCardProps = {
+  task: Task;
+};
+
+export const TaskCard = ({ task }: TaskCardProps) => {
   const taskStatus = useCallback((status: TaskStatus) => {
     switch (status) {
       case "Done":
@@ -54,12 +58,12 @@ export const TaskCard = ({ data }: { data: Task }) => {
           <YStack gap="$2">
             <XStack alignItems="center" justifyContent="space-between">
               <XStack gap="$2" alignItems="center">
-                {taskCategory(data.category)}
-                <H5 color="$blue">{data.title}</H5>
+                {taskCategory(task.category)}
+                <H5 color="$blue">{task.title}</H5>
               </XStack>
-              {taskStatus(data.status)}
+              {taskStatus(task.status)}
             </XStack>
-            <Text fontSize="$2">{data.description}</Text>
+            <Text fontSize="$2">{task.description}</Text>
           </YStack>
         </Card.Header>
         <Card.Footer
@@ -72,11 +76,11 @@ export const TaskCard = ({ data }: { data: Task }) => {
             fontSize="$2"
             style={{ fontFamily: "ManropeSemiBold" }}
           >
-            Priority {data.priority}
+            Priority {task.priority}
           </Text>
           <Text color="$blue" fontSize="$2">{`${taskDate(
-            data.dateFrom
-          )} - ${taskDate(data.dateTo)}`}</Text>
+            task.dateFrom
+          )} - ${taskDate(task.dateTo)}`}</Text>
         </Card.Footer>
       </Card>
     </XStack>

@@ -1,5 +1,5 @@
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ScrollView, XStack, YStack } from "tamagui";
+import { ScrollView, XStack } from "tamagui";
 
 import { ActivityHeader } from "@/ui/core/header";
 import { ActivityTabs, DatesCard } from "@/ui/services";

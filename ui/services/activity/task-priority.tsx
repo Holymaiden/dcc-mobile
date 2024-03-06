@@ -1,6 +1,6 @@
 import type { Task, TaskStatus } from "@/core/types";
 import { CategoryButton, TaskCard, View } from "@core";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { H5, ScrollView, XStack, YStack } from "tamagui";
 
 const status: (TaskStatus | "All")[] = [
@@ -12,28 +12,42 @@ const status: (TaskStatus | "All")[] = [
   "Failed",
 ];
 
-export const TaskPriority = ({
-  task,
-  isLoading,
-  isErorr,
-}: {
-  task: Task[];
-  isLoading: boolean;
-  isErorr: boolean;
-}) => {
+const tasks: Task[] = [
+  {
+    id: "1",
+    title: "UI Design",
+    description:
+      "User interface (UI) design is the process designers use to build interfaces in software or computerized devices, focusing on looks or style. Designers aim to create interfaces which users find easy to use and pleasurable. UI design refers to graphical user interfaces and other forms e.g., voice-controlled interfaces.",
+    priority: "High",
+    dateFrom: "2022-01-01",
+    dateTo: "2022-02-03",
+    status: "Done",
+    category: "Design",
+  },
+  {
+    id: "2",
+    title: "Laravel Task",
+    description:
+      "Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of developmentby easing common tasks used in the majority of web projects, such as authentication.",
+    priority: "Medium",
+    dateFrom: "2022-01-01",
+    dateTo: "2022-02-03",
+    status: "In Progress",
+    category: "Program",
+  },
+];
+
+export const TaskPriority = () => {
   const [active, setActive] = useState<TaskStatus | "All">("All");
 
   const handleActive = (data: TaskStatus | "All") => {
     setActive(data);
   };
 
-  if (isLoading) return <></>;
-  if (isErorr) return <></>;
-
-  task = task.filter((data) => {
-    if (active === "All") return data;
-    return data.status === active;
-  });
+  const getTasks = useMemo(() => {
+    if (active === "All") return tasks;
+    return tasks.filter((data) => data.status === active);
+  }, [active]);
 
   return (
     <YStack gap="$4">
@@ -50,8 +64,8 @@ export const TaskPriority = ({
         </XStack>
       </ScrollView>
       <YStack gap="$4">
-        {task.length > 0 ? (
-          task.map((data) => <TaskCard key={data.id} data={data} />)
+        {getTasks.length > 0 ? (
+          getTasks.map((task) => <TaskCard key={task.id} task={task} />)
         ) : (
           <View alignItems="center">
             <H5 color="$grayscale700">There is no task</H5>
