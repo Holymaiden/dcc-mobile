@@ -20,9 +20,8 @@ const NewsCard = ({ data }: { data: NewsType }) => {
       scale={0.9}
       hoverStyle={{ scale: 0.925 }}
       pressStyle={{ scale: 0.875 }}
-      backgroundColor="$primary50"
+      backgroundColor="$white"
       borderRadius="$8"
-      borderColor="transparent"
     >
       <Card.Header padded>
         <XStack justifyContent="space-between">

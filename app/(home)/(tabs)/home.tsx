@@ -1,12 +1,19 @@
-import { H4, H5, ScrollView, XStack } from "tamagui";
+import { H4, H5, ScrollView, XStack, YStack } from "tamagui";
 import { Image } from "expo-image";
 
-import { Container, HomeHeader, SafeAreaBackground, Text, View } from "@core";
+import {
+  HomeHeader,
+  Notification,
+  SafeAreaBackground,
+  Text,
+  View,
+} from "@core";
 import { MemberCard, News } from "@/ui/services";
 import { NewsType } from "@/core/types";
 
 // @ts-ignore
 import carousel3 from "../../../assets/images/carousel3.png";
+import { useState } from "react";
 
 const datas: NewsType[] = [
   {
@@ -36,17 +43,35 @@ const memberCard = {
 };
 
 const Home = () => {
+  const [showNotif, setShowNotif] = useState(true);
+
   return (
     <SafeAreaBackground>
       <ScrollView showsVerticalScrollIndicator={false}>
         <HomeHeader user="fihaa" notifications={1} />
-        <Container gap="$4" borderRadius="$10">
+        {showNotif ? (
+          <YStack marginHorizontal="$4" marginBottom="$3">
+            <Notification
+              message={
+                <>
+                  The remaining time to attend{" "}
+                  <Text
+                    fontSize="$5"
+                    color="$blue"
+                    style={{ fontFamily: "ManropeBold" }}
+                  >
+                    00:07:20
+                  </Text>
+                </>
+              }
+              status="primary"
+              onPress={() => setShowNotif(false)}
+            />
+          </YStack>
+        ) : null}
+        <YStack marginHorizontal="$4" gap="$4">
           <XStack justifyContent="space-between" alignItems="center">
-            <H4
-              flex={2}
-              color="$grayscale900"
-              style={{ fontFamily: "ManropeBold" }}
-            >
+            <H4 flex={2} color="$white" style={{ fontFamily: "ManropeBold" }}>
               Do you have a meeting today?
             </H4>
             <Image
@@ -59,12 +84,16 @@ const Home = () => {
           </View>
           <View gap="$3">
             <XStack justifyContent="space-between" alignItems="center">
-              <H5>News</H5>
-              <Text color="$blue">See all</Text>
+              <H5 color="$white" style={{ fontFamily: "ManropeBold" }}>
+                News
+              </H5>
+              <Text color="$white" style={{ fontFamily: "ManropeBold" }}>
+                See all
+              </Text>
             </XStack>
             <News datas={datas} isLoading={false} isErorr={false} />
           </View>
-        </Container>
+        </YStack>
       </ScrollView>
     </SafeAreaBackground>
   );

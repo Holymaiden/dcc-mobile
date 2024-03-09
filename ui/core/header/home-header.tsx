@@ -31,7 +31,11 @@ export const HomeHeader = ({ user, notifications }: HomeHeaderProps) => {
           style={{ width: 40, height: 40, borderRadius: 40 / 2 }}
         />
         <YStack gap="$2">
-          <Text color="$white" fontWeight="bold" fontFamily="unset">
+          <Text
+            color="$white"
+            fontWeight="bold"
+            style={{ fontFamily: "ManropeBold" }}
+          >
             Hi, {firstLatterUppercase(user)}
           </Text>
           <Text color="$white" fontSize="$1">
