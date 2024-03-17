@@ -1,0 +1,14 @@
+name: 'Setup  Node + YARN + Install Dependencies'
+
+description: 'Setup  Node + YARN + Install Dependencies'
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: 'yarn'
+
+    - name: 📦 Install Project Dependencies
+      run: yarn install --frozen-lockfile
+      shell: bash
