@@ -1,8 +1,9 @@
-import { ScrollView, Separator, XStack, YStack } from "tamagui";
-import { Link } from "expo-router";
+import { Container, GoogleButton, Text, View } from '@core';
+import { Link } from 'expo-router';
+import React from 'react';
+import { ScrollView, Separator, XStack, YStack } from 'tamagui';
 
-import { Container, GoogleButton, Text, View } from "@core";
-import { RegisterForm } from "@/ui/services";
+import { RegisterForm } from '@/ui/services';
 
 const Register = () => {
   return (

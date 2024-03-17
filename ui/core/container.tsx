@@ -1,5 +1,6 @@
-import React from "react";
-import { YStack, YStackProps } from "tamagui";
+import React from 'react';
+import type { YStackProps } from 'tamagui';
+import { YStack } from 'tamagui';
 
 export type ContainerProps = YStackProps;
 

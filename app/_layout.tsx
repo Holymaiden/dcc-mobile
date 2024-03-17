@@ -1,23 +1,25 @@
-import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import { useCallback, useEffect } from "react";
-import { PortalProvider, TamaguiProvider } from "tamagui";
-import config from "@/tamagui.config";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { useFonts } from 'expo-font';
+import { Stack } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
+import React from 'react';
+import { useEffect } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { PortalProvider, TamaguiProvider } from 'tamagui';
 
-export { ErrorBoundary } from "expo-router";
+import config from '@/tamagui.config';
+
+export { ErrorBoundary } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    ManropeBold: require("../assets/fonts/Manrope-Bold.ttf"),
-    ManropeSemiBold: require("../assets/fonts/Manrope-SemiBold.ttf"),
-    ManropeMedium: require("../assets/fonts/Manrope-Medium.ttf"),
-    Manrope: require("../assets/fonts/Manrope-Regular.ttf"),
-    Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
-    InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+    ManropeBold: require('../assets/fonts/Manrope-Bold.ttf'),
+    ManropeSemiBold: require('../assets/fonts/Manrope-SemiBold.ttf'),
+    ManropeMedium: require('../assets/fonts/Manrope-Medium.ttf'),
+    Manrope: require('../assets/fonts/Manrope-Regular.ttf'),
+    Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
+    InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   });
 
   useEffect(() => {

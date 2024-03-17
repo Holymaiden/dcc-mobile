@@ -1,7 +1,8 @@
-import { XStack, YStack } from "tamagui";
-
-import { Text } from "@core";
-import { BadgeCheck, BadgeInfo } from "@tamagui/lucide-icons";
+import { Text } from '@core';
+import { BadgeCheck, BadgeInfo } from '@tamagui/lucide-icons';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { XStack, YStack } from 'tamagui';
 
 export const ProfileStatistic = () => {
   return (
@@ -16,16 +17,12 @@ export const ProfileStatistic = () => {
           borderRadius="$8"
           gap="$2"
         >
-          <Text color="$white" style={{ fontFamily: "ManropeSemiBold" }}>
+          <Text color="$white" style={styles.text}>
             Task Done
           </Text>
           <XStack alignItems="center" gap="$4">
             <BadgeCheck color="$successLight" size="$3" />
-            <Text
-              color="$white"
-              fontSize="$9"
-              style={{ fontFamily: "ManropeSemiBold" }}
-            >
+            <Text color="$white" fontSize="$9" style={styles.text}>
               5
             </Text>
           </XStack>
@@ -40,16 +37,12 @@ export const ProfileStatistic = () => {
           borderRadius="$8"
           gap="$2"
         >
-          <Text color="$white" style={{ fontFamily: "ManropeSemiBold" }}>
+          <Text color="$white" style={styles.text}>
             Task In Progress
           </Text>
           <XStack alignItems="center" gap="$4">
             <BadgeInfo color="$warningLight" size="$3" />
-            <Text
-              color="$white"
-              fontSize="$9"
-              style={{ fontFamily: "ManropeSemiBold" }}
-            >
+            <Text color="$white" fontSize="$9" style={styles.text}>
               5
             </Text>
           </XStack>
@@ -58,3 +51,9 @@ export const ProfileStatistic = () => {
     </YStack>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'ManropeSemiBold',
+  },
+});

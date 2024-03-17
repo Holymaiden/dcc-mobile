@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { AnimatePresence } from "@tamagui/animate-presence";
-import { Circle } from "@tamagui/lucide-icons";
-import { XStack, YStack, styled } from "tamagui";
-import { Image } from "expo-image";
+import { AnimatePresence } from '@tamagui/animate-presence';
+import { Circle } from '@tamagui/lucide-icons';
+import { Image } from 'expo-image';
+import React, { useState } from 'react';
+import { StyleSheet } from 'react-native';
+import { styled, XStack, YStack } from 'tamagui';
 
-import { Button } from "./button/button";
-import { Text } from "./text";
+import { Button } from './button/button';
+import { Text } from './text';
 
 const GalleryItem = styled(YStack, {
   zIndex: 1,
@@ -14,7 +15,7 @@ const GalleryItem = styled(YStack, {
   fullscreen: true,
   variants: {
     going: {
-      ":number": (going) => ({
+      ':number': (going) => ({
         enterStyle: {
           x: going > 0 ? 1000 : -1000,
 
@@ -54,6 +55,7 @@ export const Carousel = ({ data }: CarouselProps) => {
     }, 3000); // Carousel akan bergerak setiap 3 detik
 
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -64,7 +66,7 @@ export const Carousel = ({ data }: CarouselProps) => {
             <Image
               source={images[imageIndex].img}
               contentFit="contain"
-              style={{ height: "80%" }}
+              style={styles.image}
             />
             <Text
               textAlign="center"
@@ -82,10 +84,10 @@ export const Carousel = ({ data }: CarouselProps) => {
           <Button
             key={idx}
             accessibilityLabel="circle"
-            icon={<Circle fill={idx === imageIndex ? "#2445CD" : "white"} />}
+            icon={<Circle fill={idx === imageIndex ? '#2445CD' : 'white'} />}
             scaleIcon={1}
             size="$1"
-            color={imageIndex === idx ? "$primary" : "gray"}
+            color={imageIndex === idx ? '$primary' : 'gray'}
             backgroundColor="transparent"
             onPress={() => setPage([idx, idx > imageIndex ? 1 : -1])}
           />
@@ -94,3 +96,9 @@ export const Carousel = ({ data }: CarouselProps) => {
     </XStack>
   );
 };
+
+const styles = StyleSheet.create({
+  image: {
+    height: '80%',
+  },
+});

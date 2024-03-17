@@ -7,12 +7,16 @@ import {
   Loader,
   Network,
   XCircle,
-} from "@tamagui/lucide-icons";
-import { useCallback } from "react";
-import { Card, H5, Separator, XStack, YStack } from "tamagui";
-import { Text } from "../text";
-import { taskDate } from "@/core";
-import { Task, TaskCategory, TaskStatus } from "@/core/types";
+} from '@tamagui/lucide-icons';
+import React from 'react';
+import { useCallback } from 'react';
+import { StyleSheet } from 'react-native';
+import { Card, H5, Separator, XStack, YStack } from 'tamagui';
+
+import { taskDate } from '@/core';
+import type { Task, TaskCategory, TaskStatus } from '@/core/types';
+
+import { Text } from '../text';
 
 type TaskCardProps = {
   task: Task;
@@ -21,24 +25,24 @@ type TaskCardProps = {
 export const TaskCard = ({ task }: TaskCardProps) => {
   const taskStatus = useCallback((status: TaskStatus) => {
     switch (status) {
-      case "Done":
+      case 'Done':
         return <Check color="$successLight" size="$1.5" />;
-      case "In Progress":
+      case 'In Progress':
         return <Loader color="$blue" size="$1.5" />;
-      case "Failed":
+      case 'Failed':
         return <XCircle color="$alertLight" size="$1.5" />;
-      case "Review":
+      case 'Review':
         return <Eye color="$warningLight" size="$1.5" />;
     }
   }, []);
 
   const taskCategory = useCallback((category: TaskCategory) => {
     switch (category) {
-      case "Design":
+      case 'Design':
         return <Figma color="$blue" size="$1" />;
-      case "Program":
+      case 'Program':
         return <Code2 color="$blue" size="$1" />;
-      case "Networking":
+      case 'Networking':
         return <Network color="$blue" size="$1" />;
       default:
         return <Globe color="$blue" size="$1" />;
@@ -71,18 +75,20 @@ export const TaskCard = ({ task }: TaskCardProps) => {
           paddingBottom="$4"
           justifyContent="space-between"
         >
-          <Text
-            color="$blue"
-            fontSize="$2"
-            style={{ fontFamily: "ManropeSemiBold" }}
-          >
+          <Text color="$blue" fontSize="$2" style={styles.text}>
             Priority {task.priority}
           </Text>
           <Text color="$blue" fontSize="$2">{`${taskDate(
-            task.dateFrom
+            task.dateFrom,
           )} - ${taskDate(task.dateTo)}`}</Text>
         </Card.Footer>
       </Card>
     </XStack>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'ManropeSemiBold',
+  },
+});

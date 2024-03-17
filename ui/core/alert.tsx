@@ -1,10 +1,6 @@
-import {
-  AlertDialog as AlertTamagui,
-  AlertDialogProps,
-  YStack,
-  XStack,
-  Button,
-} from "tamagui";
+import React from 'react';
+import type { AlertDialogProps } from 'tamagui';
+import { AlertDialog as AlertTamagui, Button, XStack, YStack } from 'tamagui';
 
 type AlertProps = {
   children?: React.ReactNode;
@@ -18,7 +14,7 @@ export const Alert = ({
   children,
   title,
   description,
-  backgroundColor = "$white",
+  backgroundColor = '$white',
   onSubmit,
   ...props
 }: AlertProps) => {
@@ -33,8 +29,8 @@ export const Alert = ({
           key="overlay"
           animation="quick"
           opacity={0.5}
-          enterStyle={{ opacity: 0 }}
-          exitStyle={{ opacity: 0 }}
+          enterStyle={{ opacity: 0 }} // eslint-disable-line react-native/no-inline-styles
+          exitStyle={{ opacity: 0 }} // eslint-disable-line react-native/no-inline-styles
         />
         <AlertTamagui.Content
           backgroundColor={backgroundColor}
@@ -43,15 +39,15 @@ export const Alert = ({
           elevate
           key="content"
           animation={[
-            "quick",
+            'quick',
             {
               opacity: {
                 overshootClamping: true,
               },
             },
           ]}
-          enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }}
-          exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }}
+          enterStyle={{ x: 0, y: -20, opacity: 0, scale: 0.9 }} // eslint-disable-line react-native/no-inline-styles
+          exitStyle={{ x: 0, y: 10, opacity: 0, scale: 0.95 }} // eslint-disable-line react-native/no-inline-styles
           x={0}
           scale={1}
           opacity={1}

@@ -1,4 +1,4 @@
-export type CommitteTaskStatus = "In Progress" | "Done";
+export type CommitteTaskStatus = 'In Progress' | 'Done';
 
 export type Committe = {
   id: string;

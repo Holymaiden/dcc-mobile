@@ -1,17 +1,18 @@
-import { Image } from "expo-image";
-import { H4, H6, Separator, View, XStack, YStack } from "tamagui";
-
-import { Mail, MapPin } from "@tamagui/lucide-icons";
-import { Text } from "@core";
+import { Text } from '@core';
+import { Mail, MapPin } from '@tamagui/lucide-icons';
+import { Image } from 'expo-image';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { H4, H6, Separator, View, XStack, YStack } from 'tamagui';
 
 // @ts-ignore
-import carousel3 from "../../../assets/images/profile.png";
+import carousel3 from '../../../assets/images/profile.png';
 
 const profile = {
-  name: "Holymaiden",
-  email: "Holymaiden@test.com",
-  address: "Makassar, Indonesia",
-  status: "Anggota",
+  name: 'Holymaiden',
+  email: 'Holymaiden@test.com',
+  address: 'Makassar, Indonesia',
+  status: 'Anggota',
 };
 
 export const ProfileUser = () => {
@@ -27,28 +28,13 @@ export const ProfileUser = () => {
         top={-70}
         zIndex={999}
       >
-        <Image
-          source={carousel3}
-          style={{
-            width: 100,
-            height: 100,
-            borderRadius: 36,
-          }}
-        />
+        <Image source={carousel3} style={styles.imageHello} />
       </View>
       <YStack flex={1} marginTop="$8">
-        <H4
-          textAlign="center"
-          color="$blue"
-          style={{ fontFamily: "ManropeBold" }}
-        >
+        <H4 textAlign="center" color="$blue" style={styles.textH4}>
           {profile.name}
         </H4>
-        <H6
-          textAlign="center"
-          color="$warning"
-          style={{ fontFamily: "ManropeBold" }}
-        >
+        <H6 textAlign="center" color="$warning" style={styles.textH4}>
           {profile.status}
         </H6>
       </YStack>
@@ -70,3 +56,12 @@ export const ProfileUser = () => {
     </YStack>
   );
 };
+
+const styles = StyleSheet.create({
+  imageHello: {
+    width: 100,
+    height: 100,
+    borderRadius: 36,
+  },
+  textH4: { fontFamily: 'ManropeBold' },
+});

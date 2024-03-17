@@ -1,9 +1,9 @@
-import React from "react";
-import { ScrollView, Separator, XStack, YStack } from "tamagui";
-import { Link } from "expo-router";
+import { Container, GoogleButton, Text, View } from '@core';
+import { Link } from 'expo-router';
+import React from 'react';
+import { ScrollView, Separator, XStack, YStack } from 'tamagui';
 
-import { Container, GoogleButton, Text, View } from "@core";
-import { TabsLogin } from "@/ui/services";
+import { TabsLogin } from '@/ui/services';
 
 const Login: React.FC = () => {
   return (

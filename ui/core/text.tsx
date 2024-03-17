@@ -1,8 +1,12 @@
-import React from "react";
-import { Text as RNText, TextProps as RNTextProps } from "tamagui";
+import React from 'react';
+import type { TextProps as RNTextProps } from 'tamagui';
+import { Text as RNText } from 'tamagui';
 
 export const Text: React.FC<TextProps> = ({ children, ...props }) => (
-  <RNText style={{ fontFamily: "Manrope" }} {...props}>
+  <RNText
+    style={{ fontFamily: 'Manrope' }} // eslint-disable-line react-native/no-inline-styles
+    {...props}
+  >
     {children}
   </RNText>
 );

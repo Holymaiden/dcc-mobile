@@ -1,28 +1,27 @@
-import * as React from "react";
-import { YStack } from "tamagui";
-import { useRouter } from "expo-router";
+import { Button, Carousel, Container, LinearGradient } from '@core';
+import { useRouter } from 'expo-router';
+import * as React from 'react';
+import { YStack } from 'tamagui';
 
-import { Button, Carousel, Container, LinearGradient } from "@core";
-
 // @ts-ignore
-import carousel1 from "../../assets/images/carousel1.png";
+import carousel1 from '../../assets/images/carousel1.png';
 // @ts-ignore
-import carousel2 from "../../assets/images/carousel2.png";
+import carousel2 from '../../assets/images/carousel2.png';
 // @ts-ignore
-import carousel3 from "../../assets/images/carousel3.png";
+import carousel3 from '../../assets/images/carousel3.png';
 
 const carouselData = [
   {
     img: carousel1,
-    desc: "Welcome to DCC Mobile App. We will help you to manage your organizations.",
+    desc: 'Welcome to DCC Mobile App. We will help you to manage your organizations.',
   },
   {
     img: carousel2,
-    desc: "With management based on priority and daily tasks, it will give you convenience in managing and determining the tasks that must be done first",
+    desc: 'With management based on priority and daily tasks, it will give you convenience in managing and determining the tasks that must be done first',
   },
   {
     img: carousel3,
-    desc: "the task that must be done first",
+    desc: 'the task that must be done first',
   },
 ];
 
@@ -38,14 +37,14 @@ const Auth: React.FC = () => {
         <Button
           backgroundColor="$white"
           color="$blue"
-          onPress={() => router.navigate("/login")}
+          onPress={() => router.navigate('/login')}
         >
           Login
         </Button>
         <Button
           backgroundColor="transparent"
           color="$white"
-          onPress={() => router.navigate("/register")}
+          onPress={() => router.navigate('/register')}
         >
           Create an account
         </Button>

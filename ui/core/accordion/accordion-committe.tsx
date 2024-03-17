@@ -1,9 +1,12 @@
-import { Accordion, H6, Square, XStack } from "tamagui";
+import { Building, ChevronDown, Subtitles } from '@tamagui/lucide-icons';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Accordion, H6, Square, XStack } from 'tamagui';
 
-import { Committe } from "@/core/types";
-import { Building, ChevronDown, Subtitles } from "@tamagui/lucide-icons";
-import { Text } from "../text";
-import { taskDate } from "@/core";
+import { taskDate } from '@/core';
+import type { Committe } from '@/core/types';
+
+import { Text } from '../text';
 
 type AccordionCommitteProps = {
   committes: Committe[];
@@ -32,7 +35,7 @@ export const AccordionCommitte = ({ committes }: AccordionCommitteProps) => {
                       </XStack>
                       <Square
                         animation="quick"
-                        rotate={open ? "180deg" : "0deg"}
+                        rotate={open ? '180deg' : '0deg'}
                       >
                         <ChevronDown size="$1" color="$blue" />
                       </Square>
@@ -46,7 +49,7 @@ export const AccordionCommitte = ({ committes }: AccordionCommitteProps) => {
                   borderBottomLeftRadius="$4"
                   borderBottomRightRadius="$4"
                   borderColor="$grayscale100"
-                  onPress={() => console.log("press")}
+                  onPress={() => console.log('press')}
                 >
                   {committe.theme && (
                     <XStack gap="$2" alignItems="center" marginBottom="$2">
@@ -58,17 +61,17 @@ export const AccordionCommitte = ({ committes }: AccordionCommitteProps) => {
                   <XStack justifyContent="space-between" marginTop="$2">
                     <Text
                       color={
-                        committe.status === "In Progress"
-                          ? "$blue"
-                          : "$successLight"
+                        committe.status === 'In Progress'
+                          ? '$blue'
+                          : '$successLight'
                       }
                       fontSize="$2"
-                      style={{ fontFamily: "ManropeSemiBold" }}
+                      style={styles.text}
                     >
                       {committe.status}
                     </Text>
                     <Text color="$blue" fontSize="$2">{`${taskDate(
-                      committe.date_start
+                      committe.date_start,
                     )} - ${taskDate(committe.date_end)}`}</Text>
                   </XStack>
                 </Accordion.Content>
@@ -79,3 +82,9 @@ export const AccordionCommitte = ({ committes }: AccordionCommitteProps) => {
     </XStack>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'ManropeSemiBold',
+  },
+});

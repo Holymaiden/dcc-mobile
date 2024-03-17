@@ -1,28 +1,29 @@
-import { XStack, YStack } from "tamagui";
-import { LogOut, Map, Settings, User } from "@tamagui/lucide-icons";
-
-import { Text } from "@core";
+import { Text } from '@core';
+import { LogOut, Map, Settings, User } from '@tamagui/lucide-icons';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { XStack, YStack } from 'tamagui';
 
 const menus = [
   {
-    name: "My Profile",
+    name: 'My Profile',
     icon: <User color="$blue" size="$2" />,
-    route: "/my-profile",
+    route: '/my-profile',
   },
   {
-    name: "Location",
+    name: 'Location',
     icon: <Map color="$blue" size="$2" />,
-    route: "/location",
+    route: '/location',
   },
   {
-    name: "Settings",
+    name: 'Settings',
     icon: <Settings color="$blue" size="$2" />,
-    route: "/settings",
+    route: '/settings',
   },
   {
-    name: "Logout",
+    name: 'Logout',
     icon: <LogOut color="$blue" size="$2" />,
-    route: "/logout",
+    route: '/logout',
   },
 ];
 
@@ -37,9 +38,15 @@ export const ProfileMenu = () => {
       {menus.map((menu) => (
         <XStack key={menu.name} gap="$7" alignItems="center">
           {menu.icon}
-          <Text style={{ fontFamily: "ManropeSemiBold" }}>{menu.name}</Text>
+          <Text style={styles.text}>{menu.name}</Text>
         </XStack>
       ))}
     </YStack>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'ManropeSemiBold',
+  },
+});

@@ -1,8 +1,10 @@
-import { XStack, Button, H4 } from "tamagui";
-import { ArrowLeft } from "@tamagui/lucide-icons";
+import { ArrowLeft } from '@tamagui/lucide-icons';
+import { router } from 'expo-router';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Button, H4, XStack } from 'tamagui';
 
-import { View } from "../view";
-import { router } from "expo-router";
+import { View } from '../view';
 
 export type PageHeaderProps = {
   title: string;
@@ -31,7 +33,7 @@ export const PageHeader = ({ title, rightButton }: PageHeaderProps) => {
         </XStack>
       </View>
       <View flex={1} justifyContent="center" alignItems="center">
-        <H4 color="$white" style={{ fontFamily: "ManropeBold" }}>
+        <H4 color="$white" style={styles.text}>
           {title}
         </H4>
       </View>
@@ -41,3 +43,9 @@ export const PageHeader = ({ title, rightButton }: PageHeaderProps) => {
     </XStack>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'ManropeBold',
+  },
+});

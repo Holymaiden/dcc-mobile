@@ -1,1 +1,1 @@
-export * from "./accordion-committe";
+export * from './accordion-committe';

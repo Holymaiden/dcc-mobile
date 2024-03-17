@@ -1,4 +1,6 @@
-import { ButtonProps as RNButtonProps, Button as RNButton } from "tamagui";
+import React from 'react';
+import type { ButtonProps as RNButtonProps } from 'tamagui';
+import { Button as RNButton } from 'tamagui';
 
 export const Button = ({ children, ...props }: RNButtonProps) => {
   return (

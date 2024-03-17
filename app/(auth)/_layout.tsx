@@ -1,4 +1,5 @@
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router';
+import React from 'react';
 
 const Layout = () => {
   return (
@@ -13,16 +14,16 @@ const Layout = () => {
         name="login"
         options={{
           headerShown: true,
-          title: "Login",
-          headerBackTitle: "Back",
+          title: 'Login',
+          headerBackTitle: 'Back',
         }}
       />
       <Stack.Screen
         name="register"
         options={{
           headerShown: true,
-          title: "Register",
-          headerBackTitle: "Back",
+          title: 'Register',
+          headerBackTitle: 'Back',
         }}
       />
     </Stack>

@@ -1,26 +1,21 @@
-import {
-  AnimatePresence,
-  Separator,
-  SizableText,
-  Tabs,
-  TabsContentProps,
-  YStack,
-} from "tamagui";
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
+import type { TabsContentProps } from 'tamagui';
+import { AnimatePresence, Separator, SizableText, Tabs, YStack } from 'tamagui';
 
-import { TaskCommitte } from "./task-committe";
-import { TaskPriority } from "./task-priority";
+import { TaskCommitte } from './task-committe';
+import { TaskPriority } from './task-priority';
 
-type TabActiveProps = "task-priority" | "task-committe";
+type TabActiveProps = 'task-priority' | 'task-committe';
 
 export const ActivityTabs = () => {
-  const [active, setActive] = useState<TabActiveProps>("task-priority");
+  const [active, setActive] = useState<TabActiveProps>('task-priority');
 
-  const getContent = (active: TabActiveProps) => {
-    switch (active) {
-      case "task-priority":
+  const getContent = (tab: TabActiveProps) => {
+    switch (tab) {
+      case 'task-priority':
         return <TaskPriority />;
-      case "task-committe":
+      case 'task-committe':
         return <TaskCommitte />;
     }
   };
@@ -45,18 +40,18 @@ export const ActivityTabs = () => {
         <Tabs.Tab
           flex={1}
           value="task-priority"
-          backgroundColor={active === "task-priority" ? "$white" : "unset"}
+          backgroundColor={active === 'task-priority' ? '$white' : 'unset'}
         >
           <YStack alignItems="center">
             <SizableText
               fontFamily="$body"
               size="$5"
-              color={active === "task-priority" ? "$blue" : "$grayscale900"}
+              color={active === 'task-priority' ? '$blue' : '$grayscale900'}
             >
               Priority Task
             </SizableText>
             <Separator
-              borderColor={active === "task-priority" ? "$blue" : "transparent"}
+              borderColor={active === 'task-priority' ? '$blue' : 'transparent'}
               width="$1"
               borderWidth="$0.5"
             />
@@ -65,18 +60,18 @@ export const ActivityTabs = () => {
         <Tabs.Tab
           flex={1}
           value="task-committe"
-          backgroundColor={active === "task-committe" ? "$white" : "unset"}
+          backgroundColor={active === 'task-committe' ? '$white' : 'unset'}
         >
           <YStack alignItems="center">
             <SizableText
               fontFamily="$body"
               size="$5"
-              color={active === "task-committe" ? "$blue" : "$grayscale900"}
+              color={active === 'task-committe' ? '$blue' : '$grayscale900'}
             >
               Committe Task
             </SizableText>
             <Separator
-              borderColor={active === "task-committe" ? "$blue" : "transparent"}
+              borderColor={active === 'task-committe' ? '$blue' : 'transparent'}
               width="$1"
               borderWidth="$0.5"
             />
@@ -90,10 +85,12 @@ export const ActivityTabs = () => {
           forceMount
           justifyContent="flex-start"
           animation="lazy"
+          // eslint-disable-next-line react-native/no-inline-styles
           enterStyle={{
             opacity: 0,
             scale: 0.9,
           }}
+          // eslint-disable-next-line react-native/no-inline-styles
           exitStyle={{
             opacity: 0,
             scale: 0.9,

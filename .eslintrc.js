@@ -1,6 +1,6 @@
 module.exports = {
   // Configuration for JavaScript files
-  extends: ['plugin:prettier/recommended'],
+  extends: ['@react-native-community', 'plugin:prettier/recommended'],
   plugins: ['unicorn'],
   rules: {
     'prettier/prettier': [
@@ -23,7 +23,7 @@ module.exports = {
     {
       files: ['**/*.ts', '**/*.tsx', '**/*.js'],
       plugins: ['@typescript-eslint', 'unused-imports', 'simple-import-sort'],
-      extends: ['plugin:prettier/recommended'],
+      extends: ['@react-native-community', 'plugin:prettier/recommended'],
       parserOptions: {
         project: './tsconfig.json',
       },
@@ -36,7 +36,7 @@ module.exports = {
           },
         ],
         'max-params': ['error', 3], // Limit the number of parameters in a function to use object instead
-        'max-lines-per-function': ['error', 70],
+        'max-lines-per-function': ['error', 120],
         'react/destructuring-assignment': 'off', // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
         'react/require-default-props': 'off', // Allow non-defined react props as undefined
         '@typescript-eslint/comma-dangle': 'off', // Avoid conflict rule between Eslint and Prettier

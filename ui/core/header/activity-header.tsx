@@ -1,7 +1,9 @@
-import { H4, View, XStack } from "tamagui";
-import { Calendar, CalendarCheck2 } from "@tamagui/lucide-icons";
+import { Calendar, CalendarCheck2 } from '@tamagui/lucide-icons';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { H4, View, XStack } from 'tamagui';
 
-import { Button } from "../button";
+import { Button } from '../button';
 
 export const ActivityHeader = () => {
   return (
@@ -14,13 +16,13 @@ export const ActivityHeader = () => {
       <View justifyContent="center">
         <XStack gap="$2" alignItems="center">
           <Calendar color="$blue" size="$1" />
-          <H4 color="$blue" style={{ fontFamily: "ManropeBold" }}>
+          <H4 color="$blue" style={styles.text}>
             {new Date()
-              .toLocaleDateString("id-ID", {
-                year: "numeric",
-                month: "short",
+              .toLocaleDateString('id-ID', {
+                year: 'numeric',
+                month: 'short',
               })
-              .replace(" ", ", ")}
+              .replace(' ', ', ')}
           </H4>
         </XStack>
       </View>
@@ -37,3 +39,9 @@ export const ActivityHeader = () => {
     </XStack>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'ManropeBold',
+  },
+});

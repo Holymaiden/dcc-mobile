@@ -1,41 +1,42 @@
-import { useMemo, useState } from "react";
-import { H5, ScrollView, XStack, YStack } from "tamagui";
+import { AccordionCommitte, CategoryButton, View } from '@core';
+import React from 'react';
+import { useMemo, useState } from 'react';
+import { H5, ScrollView, XStack, YStack } from 'tamagui';
 
-import { CategoryButton, View, AccordionCommitte } from "@core";
-import { Committe, CommitteTaskStatus } from "@/core/types";
+import type { Committe, CommitteTaskStatus } from '@/core/types';
 
-const status: (CommitteTaskStatus | "All")[] = ["All", "In Progress", "Done"];
+const status: (CommitteTaskStatus | 'All')[] = ['All', 'In Progress', 'Done'];
 
 const committes: Committe[] = [
   {
-    id: "1",
-    name: "New Member 2024",
-    description: "This committe is for new members of the organization",
-    theme: "For New Member",
-    date_start: "2023-10-01",
-    date_end: "2024-03-10",
-    status: "In Progress",
+    id: '1',
+    name: 'New Member 2024',
+    description: 'This committe is for new members of the organization',
+    theme: 'For New Member',
+    date_start: '2023-10-01',
+    date_end: '2024-03-10',
+    status: 'In Progress',
   },
   {
-    id: "2",
-    name: "Pelatihan Daerah",
+    id: '2',
+    name: 'Pelatihan Daerah',
     description:
-      "Pelatihan Daerah untuk masyarakat umum dan masyarakat kabupaten",
-    date_start: "2023-10-01",
-    date_end: "2024-03-10",
-    status: "Done",
+      'Pelatihan Daerah untuk masyarakat umum dan masyarakat kabupaten',
+    date_start: '2023-10-01',
+    date_end: '2024-03-10',
+    status: 'Done',
   },
 ];
 
 export const TaskCommitte = () => {
-  const [active, setActive] = useState<CommitteTaskStatus | "All">("All");
+  const [active, setActive] = useState<CommitteTaskStatus | 'All'>('All');
 
-  const handleActive = (data: CommitteTaskStatus | "All") => {
+  const handleActive = (data: CommitteTaskStatus | 'All') => {
     setActive(data);
   };
 
   const getCommittes = useMemo(() => {
-    if (active === "All") return committes;
+    if (active === 'All') return committes;
     return committes.filter((data) => data.status === active);
   }, [active]);
 

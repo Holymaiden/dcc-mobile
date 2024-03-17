@@ -1,8 +1,9 @@
-import type { IconProps } from "@tamagui/helpers-icon";
-import { ScanFace } from "@tamagui/lucide-icons";
+import type { IconProps } from '@tamagui/helpers-icon';
+import { ScanFace } from '@tamagui/lucide-icons';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 
-import { View } from "../view";
-import { StyleSheet } from "react-native";
+import { View } from '../view';
 
 export const FloatingButton = ({ ...props }: IconProps) => {
   return (
@@ -14,14 +15,14 @@ export const FloatingButton = ({ ...props }: IconProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
-    alignItems: "center",
+    position: 'absolute',
+    alignItems: 'center',
     zIndex: 2,
     top: -22.5,
-    justifyContent: "center",
+    justifyContent: 'center',
     width: 60,
     height: 60,
     borderRadius: 27,
-    backgroundColor: "#006EE9",
+    backgroundColor: '#006EE9',
   },
 });

@@ -1,12 +1,13 @@
-import { ScrollView, View, YStack } from "tamagui";
+import { Container, SafeAreaBackground } from '@core';
+import React from 'react';
+import { ScrollView, View, YStack } from 'tamagui';
 
-import { Container, SafeAreaBackground } from "@core";
 import {
   CommitteProgress,
   ProfileMenu,
   ProfileStatistic,
   ProfileUser,
-} from "@/ui/services";
+} from '@/ui/services';
 
 const Profile = () => {
   return (

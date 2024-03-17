@@ -1,4 +1,6 @@
-import { Button } from "./button";
+import React from 'react';
+
+import { Button } from './button';
 
 export type CategoryButtonProps = {
   title: string;
@@ -13,8 +15,8 @@ export const CategoryButton = ({
 }: CategoryButtonProps) => {
   return (
     <Button
-      backgroundColor={active ? "$blue" : "$primary50"}
-      color={active ? "$white" : "$blue"}
+      backgroundColor={active ? '$blue' : '$primary50'}
+      color={active ? '$white' : '$blue'}
       size="$4"
       onPress={onPress}
     >

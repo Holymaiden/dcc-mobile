@@ -1,8 +1,9 @@
-import { ScrollView, XStack } from "tamagui";
+import { Container, SafeAreaBackground, View } from '@core';
+import React from 'react';
+import { ScrollView, XStack } from 'tamagui';
 
-import { ActivityHeader } from "@/ui/core/header";
-import { ActivityTabs, DatesCard } from "@/ui/services";
-import { Container, SafeAreaBackground, View } from "@core";
+import { ActivityHeader } from '@/ui/core/header';
+import { ActivityTabs, DatesCard } from '@/ui/services';
 
 const Activity = () => {
   return (

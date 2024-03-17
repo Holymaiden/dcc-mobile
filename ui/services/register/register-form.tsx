@@ -1,16 +1,18 @@
-import { TextInput } from "@/ui/core";
-import { AtSign, Lock, Phone, User } from "@tamagui/lucide-icons";
-import { useEffect, useState } from "react";
-import { Button, Form, Spinner, XStack, YStack } from "tamagui";
+import { AtSign, Lock, Phone, User } from '@tamagui/lucide-icons';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { Button, Form, Spinner, XStack, YStack } from 'tamagui';
+
+import { TextInput } from '@/ui/core';
 
 export const RegisterForm = () => {
-  const [status, setStatus] = useState<"off" | "submitting" | "submitted">(
-    "off"
+  const [status, setStatus] = useState<'off' | 'submitting' | 'submitted'>(
+    'off',
   );
 
   useEffect(() => {
-    if (status === "submitting") {
-      const timer = setTimeout(() => setStatus("off"), 2000);
+    if (status === 'submitting') {
+      const timer = setTimeout(() => setStatus('off'), 2000);
 
       return () => {
         clearTimeout(timer);
@@ -19,7 +21,7 @@ export const RegisterForm = () => {
   }, [status]);
 
   return (
-    <Form onSubmit={() => setStatus("submitting")} gap="$6">
+    <Form onSubmit={() => setStatus('submitting')} gap="$6">
       <YStack gap="$6" paddingRight="$4">
         <XStack alignItems="center">
           <User />
@@ -54,16 +56,14 @@ export const RegisterForm = () => {
           />
         </XStack>
       </YStack>
-      <Form.Trigger asChild disabled={status !== "off"}>
+      <Form.Trigger asChild disabled={status !== 'off'}>
         <Button
           backgroundColor="$primary"
           color="$white"
           borderRadius="$5"
           size="$5"
           icon={
-            status === "submitting"
-              ? () => <Spinner color="$white" />
-              : undefined
+            status === 'submitting' ? <Spinner color="$white" /> : undefined
           }
         >
           Sign Up

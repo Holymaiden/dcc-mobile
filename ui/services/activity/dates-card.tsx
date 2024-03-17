@@ -1,7 +1,9 @@
-import { Button, ButtonProps, Text, View } from "@core";
-import { useState } from "react";
-import { ScrollView } from "react-native";
-import { H5, XStack, YStack } from "tamagui";
+import type { ButtonProps } from '@core';
+import { Button, Text, View } from '@core';
+import React from 'react';
+import { useState } from 'react';
+import { ScrollView } from 'react-native';
+import { H5, XStack, YStack } from 'tamagui';
 
 type DateCardProps = {
   month: string;
@@ -17,27 +19,27 @@ export const DateCard = ({
 }: DateCardProps & ButtonProps) => {
   const date =
     new Date().getFullYear() +
-    "-" +
+    '-' +
     new Date().getMonth() +
-    "-" +
-    (parseInt(day) + 1).toString();
-  const weekday = new Date(date).toLocaleDateString("id-ID", {
-    weekday: "short",
-    timeZone: "Asia/Makassar",
+    '-' +
+    (+day + 1).toString();
+  const weekday = new Date(date).toLocaleDateString('id-ID', {
+    weekday: 'short',
+    timeZone: 'Asia/Makassar',
   });
 
   return (
     <Button
-      backgroundColor={active ? "$blue" : "$primary50"}
+      backgroundColor={active ? '$blue' : '$primary50'}
       borderRadius="$5"
-      size={active ? "$9" : "$8"}
+      size={active ? '$9' : '$8'}
       padding="$4"
       {...props}
     >
       <YStack alignItems="center">
-        <Text color={active ? "$white" : "$blue"}>{month}</Text>
-        <H5 color={active ? "$white" : "$blue"}>{day.padStart(2, "0")}</H5>
-        <Text color={active ? "$white" : "$blue"}>{weekday}</Text>
+        <Text color={active ? '$white' : '$blue'}>{month}</Text>
+        <H5 color={active ? '$white' : '$blue'}>{day.padStart(2, '0')}</H5>
+        <Text color={active ? '$white' : '$blue'}>{weekday}</Text>
       </YStack>
     </Button>
   );
@@ -45,21 +47,21 @@ export const DateCard = ({
 
 export const DatesCard = ({ ...props }: ButtonProps) => {
   const [active, setActive] = useState(
-    new Date().toLocaleDateString("id-ID", {
-      day: "numeric",
-      timeZone: "Asia/Makassar",
-    })
+    new Date().toLocaleDateString('id-ID', {
+      day: 'numeric',
+      timeZone: 'Asia/Makassar',
+    }),
   );
 
-  const month = new Date().toLocaleDateString("id-ID", {
-    month: "short",
-    timeZone: "Asia/Makassar",
+  const month = new Date().toLocaleDateString('id-ID', {
+    month: 'short',
+    timeZone: 'Asia/Makassar',
   });
 
   const totalDay = new Date(
     new Date().getFullYear(),
     new Date().getMonth() + 1,
-    0
+    0,
   ).getDate();
 
   const isActive = (day: string) => day === active;

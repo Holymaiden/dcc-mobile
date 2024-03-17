@@ -1,15 +1,17 @@
-import { AnimatePresence, SizableText, Tabs, TabsContentProps } from "tamagui";
-import { useState } from "react";
+import { Alert } from '@core';
+import { router } from 'expo-router';
+import React from 'react';
+import { useState } from 'react';
+import type { TabsContentProps } from 'tamagui';
+import { AnimatePresence, SizableText, Tabs } from 'tamagui';
 
-import { PhoneForm } from "./phone-form";
-import { EmailForm } from "./email-form";
-import { Alert } from "@core";
-import { router } from "expo-router";
+import { EmailForm } from './email-form';
+import { PhoneForm } from './phone-form';
 
-type TabActiveProps = "phone-number" | "email";
+type TabActiveProps = 'phone-number' | 'email';
 
 export const TabsLogin = () => {
-  const [active, setActive] = useState<TabActiveProps>("phone-number");
+  const [active, setActive] = useState<TabActiveProps>('phone-number');
   const [openModal, setOpenModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -17,14 +19,14 @@ export const TabsLogin = () => {
   };
 
   const handleSubmit = () => {
-    router.push("/(home)/(tabs)/home");
+    router.push('/(home)/(tabs)/home');
   };
 
-  const getContent = (active: TabActiveProps) => {
-    switch (active) {
-      case "phone-number":
+  const getContent = (tab: TabActiveProps) => {
+    switch (tab) {
+      case 'phone-number':
         return <PhoneForm onSubmit={handleOpenModal} />;
-      case "email":
+      case 'email':
         return <EmailForm onSubmit={handleOpenModal} />;
     }
   };
@@ -51,7 +53,7 @@ export const TabsLogin = () => {
           <Tabs.Tab
             flex={1}
             value="phone-number"
-            backgroundColor={active === "phone-number" ? "$white" : "unset"}
+            backgroundColor={active === 'phone-number' ? '$white' : 'unset'}
             borderRadius="$5"
             shadowOffset={{ width: 0, height: 1 }}
             shadowOpacity={0.22}
@@ -59,7 +61,7 @@ export const TabsLogin = () => {
           >
             <SizableText
               fontFamily="$body"
-              color={active === "phone-number" ? "$blue" : "$white"}
+              color={active === 'phone-number' ? '$blue' : '$white'}
             >
               Phone Number
             </SizableText>
@@ -67,7 +69,7 @@ export const TabsLogin = () => {
           <Tabs.Tab
             flex={1}
             value="email"
-            backgroundColor={active === "email" ? "$white" : "unset"}
+            backgroundColor={active === 'email' ? '$white' : 'unset'}
             borderRadius="$5"
             shadowOffset={{ width: 0, height: 1 }}
             shadowOpacity={0.22}
@@ -75,7 +77,7 @@ export const TabsLogin = () => {
           >
             <SizableText
               fontFamily="$body"
-              color={active === "email" ? "$blue" : "$white"}
+              color={active === 'email' ? '$blue' : '$white'}
             >
               Email
             </SizableText>
@@ -88,10 +90,12 @@ export const TabsLogin = () => {
             forceMount
             justifyContent="flex-start"
             animation="lazy"
+            // eslint-disable-next-line react-native/no-inline-styles
             enterStyle={{
               opacity: 0,
               scale: 0.9,
             }}
+            // eslint-disable-next-line react-native/no-inline-styles
             exitStyle={{
               opacity: 0,
               scale: 0.9,

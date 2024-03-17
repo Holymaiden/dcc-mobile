@@ -1,4 +1,6 @@
-import { Input, InputProps } from "tamagui";
+import React from 'react';
+import type { InputProps } from 'tamagui';
+import { Input } from 'tamagui';
 
 export const TextInput = ({ ...props }: InputProps) => {
   return (
@@ -6,8 +8,8 @@ export const TextInput = ({ ...props }: InputProps) => {
       borderWidth="$0"
       borderBottomWidth="$0.25"
       borderColor="$primary200"
-      focusStyle={{ borderColor: "$primary" }}
+      focusStyle={{ borderColor: '$primary' }} // eslint-disable-line react-native/no-inline-styles
       {...props}
-    ></Input>
+    />
   );
 };

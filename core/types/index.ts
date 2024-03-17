@@ -1,3 +1,3 @@
-export * from "./news";
-export * from "./task";
-export * from "./committe";
+export * from './committe';
+export * from './news';
+export * from './task';

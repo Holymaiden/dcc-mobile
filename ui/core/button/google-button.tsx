@@ -1,7 +1,9 @@
-import { Button } from "tamagui";
+import React from 'react';
+import { Button } from 'tamagui';
 
-import { Alert } from "../alert";
-import { GoogleIcon } from "@/ui/icons";
+import { GoogleIcon } from '@/ui/icons';
+
+import { Alert } from '../alert';
 
 export const GoogleButton = () => (
   <Alert title="Login with Google" description="Please login with Google">
