@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.0",
-    "@react-navigation/native": "^6.0.2",
+    "@react-navigation/native": "^6.1.17",
     "@tamagui/babel-plugin": "^1.90.15",
     "@tamagui/config": "^1.90.15",
     "@tamagui/core": "^1.90.15",
