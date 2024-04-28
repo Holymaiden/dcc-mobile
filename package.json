@@ -46,8 +46,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@commitlint/cli": "^19.2.0",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "@react-native-community/eslint-config": "^3.2.0",
     "@types/react": "~18.2.45",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
