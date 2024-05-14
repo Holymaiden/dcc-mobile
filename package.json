@@ -17,7 +17,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@expo/vector-icons": "^14.0.0",
+    "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.1.17",
     "@tamagui/babel-plugin": "^1.90.15",
     "@tamagui/config": "^1.90.15",
