@@ -11,7 +11,8 @@
     "test": "jest --watchAll",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc  --noemit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "doctor": "npx expo-doctor@latest"
   },
   "jest": {
     "preset": "jest-expo"
