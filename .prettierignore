@@ -1,0 +1,8 @@
+.expo
+.husky
+.gitignore
+.eslintignore
+android
+ios
+node_modules
+coverage

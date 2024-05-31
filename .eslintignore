@@ -9,3 +9,4 @@ ios/
 docs/
 cli/
 babel.config.js
+jest.config.js
