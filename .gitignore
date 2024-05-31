@@ -39,3 +39,9 @@ yarn-error.*
 
 expo-env.d.ts
 # @end expo-cli
+
+# Env files
+.env
+.env.development
+.env.staging
+.env.production
