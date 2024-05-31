@@ -2,13 +2,13 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "esModuleInterop": true,
+    "checkJs": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
       "@core": ["./ui/core"]
-    },
-    "esModuleInterop": true,
-    "checkJs": true
+    }
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
   "exclude": [
