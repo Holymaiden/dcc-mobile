@@ -49,7 +49,7 @@
     "tamagui": "^1.99.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.6",
+    "@babel/core": "^7.24.7",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@react-native-community/eslint-config": "^3.2.0",
