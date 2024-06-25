@@ -24,7 +24,7 @@
     "@react-navigation/native": "^6.1.17",
     "@tamagui/babel-plugin": "^1.99.1",
     "@tamagui/config": "^1.99.1",
-    "@tamagui/core": "^1.99.1",
+    "@tamagui/core": "^1.101.3",
     "@tamagui/lucide-icons": "^1.99.1",
     "expo": "^51.0.9",
     "expo-doctor": "^1.6.1",
